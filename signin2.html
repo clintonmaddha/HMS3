@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getaway</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+      *{
+    padding: 0%;
+    margin: 0%;
+}
+ body{
+    background-image: url('./hotelpics/7.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+/* header*/
+.header{
+    padding-right: 85px;
+}
+.header-half{
+color: lightslategrey;
+}
+.header2{
+    padding-bottom: 30px;
+    padding-right: 10px;
+}
+.form1{
+ text-align: right;
+ margin: 15%;
+ padding-top: -100px;
+ padding-right: 170px !important;
+}
+.u1{
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: rgb(20, 20, 20);
+    border-style: none;
+    color: blanchedalmond;
+
+} 
+.btn{
+    width: 150px;
+    background-color: transparent;
+    color: burlywood;
+    text-align: center;
+    border-radius: 20px;
+    height: 30px;
+    width: 100px;
+    
+}
+.btn:hover{
+    color: lightslategrey;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+.error{
+    color: red;
+}
+.container input{
+    background: transparent;
+    color: black;
+    border: 0.1em solid black;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container form1">
+        <h1 class="header">GET<span class=header-half>AWAY</span></h1>
+        <h1 class="header2">TRAVELS</h1>
+        <div class="error" id="error"></div>
+        <form action="../html/home.html" method="POST" onsubmit="return validation()">
+            <input type="text" class="u1" id="username" name="username" placeholder="Username">
+            <br>
+            <input type="password" class="u1" id="password" name="password" placeholder="Password">
+            <br>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+</body>
+<script>
+  function validation() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == '' || password == "") {
+        document.getElementById('error').innerHTML = "All Field are Required for Login";
+        return false;
+    }
+    if (username.length < 4) {
+        document.getElementById('error').innerHTML = "Incorect User Name";
+        return false;
+    }
+    if (password.length <6) {
+        document.getElementById('error').innerHTML = "password atleast contain 5 character or numbers";
+        return false;
+        
+    }
+    else {
+        return true;
+    }
+   
+}
+
+</script>
+</html>
